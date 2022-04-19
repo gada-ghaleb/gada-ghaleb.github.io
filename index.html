@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gada ghaleb</title>
+     <!--render all element normally-->
+    <link rel="stylesheet" href="css/reset.css">
+     <!--font awesome library-->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!--main template css file-->
+    <link rel="stylesheet" href="css/styles.css">
+     <!--Google font-->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Yellowtail&display=swap" rel="stylesheet">
+     <!--Favicon-->
+     <link rel="icon" href="img/favicon.png" type="image/png">
+   <!--Form-->  
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function() {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init('NABhJNREgzTS0z2VW');
+    })();
+</script>
+<script type="text/javascript">
+    window.onload = function() {
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // generate a five digit number for the contact_number variable
+            this.contact_number.value = Math.random() * 100000 | 0;
+            // these IDs from the previous steps
+            emailjs.sendForm('service_yddiy0b', 'template_vbef61y', this)
+                .then(function() {
+                    alert('Messaggio inviato con sucesso!');
+                    document.getElementById('user_name').value = "";
+                    document.getElementById('user_email').value = "";
+                    document.getElementById('message').value = "";
+                    console.log('SUCCESS!');
+                }, function(error) {
+                    console.log('FAILED...', error);
+                });
+        });
+    }
+</script>
+</head>
+<body>
+<!--Start header-->
+    <div class="header">
+        <div class="container">
+            <a href="#" class="logo">Gada Ghaleb</a>
+                <ul class="main-nav">
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Skills">Skills</a></li>
+                    <li><a href="#Project">Project</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<!--End header-->
+<!--Start  landing-->
+<div class=" landing" id="Home">
+    <div class="container">
+        <div class="text">
+            <h1>Ciao !<br>Mi chiamo Gada Ghaleb</h1>
+            <p>Web Developer-Videomaker-Graphic Design</p>
+            <a href="#About"><button>About me</button></a>
+        </div>
+        <div class="image" >
+            <img src="img/img-1.png" alt="">
+        </div>
+    </div>
+</div>
+<!--End  landing-->
+<!--Start articles-->  
+    <div class="articles" id="Skills">
+        <h2 class="main-title">Skills</h2>
+    <div class="container">
+        <div class="box">
+            <img src="img/img-4.png" alt="">
+            <h3>Web Developer</h3>
+            <p>(HTML-CSS)</p> 
+        </div>
+        <div class="box">
+            <img src="img/img-2.png" alt="">
+            <h3>Videomaker</h3>
+            <p>Premiere Pro</p> 
+        </div>
+        <div class="box">
+            <img src="img/img-3.png" alt="">
+            <h3>Graphic Design</h3>
+            <p>(Illustrator-Photoshop)</p> 
+        </div>
+    </div>
+</div>     
+<!--End articles-->
+<!--Start features -->
+<div class=" features" id="About">
+    <h2 class="main-title">About</h2>
+    <div class="container">
+        <div class="box">
+            <img src="img/img-5.png" alt="">
+            <div class="text">
+              <p>Sono gada ghaleb, vivo a Milano ed ho scoperto la passione per il mondo del digital grazie ad un percorso formativo intrapreso con Start2impact.
+                Da due anni mi occupo di studiare e sviluppare progetti di graphic designer, video maker e front end development, avendo anche  la fortuna di poter praticare dal vivo quanto appreso, infatti in questo arco temporale ho creato diversi contenuti per l’azienda di famiglia ed i suoi canali social. Sono ancora all’inizio di questo percorso, ma sono sicura che grazie alla passione e al supporto di me stessa, potrò realizzare il mio sogno di diventare una professionista del settore.</p>
+            </div> 
+        </div>
+    </div>
+</div>
+<!--End features -->
+<!--Start section-->
+<div class=" Section" id="Project">
+    <h2 class="main-title">Project</h2>
+    <div class="container">
+        <div class="text">
+            <h2>Cosmetica casalinga</h2>
+            <p>il progetto è stato strutturato con <strong>HTML</strong> e <strong>CSS</strong> inoltre è predisposto per essere responsive ed adattarsi a tutti i dispositivi, mobile, tablet e desktop, garantendo una user experience all’avanguardia.</p>
+            <a href="https://gada-ghaleb.github.io/cosmetic/">View Project 
+            <i class="fa-solid fa-right-long"></i></a>
+           </div>
+        <div class="image" >
+            <img src="img/img-6.png" alt="">
+        </div>
+    </div>
+</div>
+<!--End section-->
+<!--End Contact -->
+<div class="contact" id="Contact"> 
+    <h2 class="main-title">Contact me</h2>
+    <div class="container">
+        <div class="content">
+            <form id="contact-form">
+                <input type="hidden" name="contact_number">
+                <input class="main-input" type="text" name="user_name" id="user_name" placeholder="Your Name" />
+                <input class="main-input" type="email" name="user_email" id="user_email" placeholder="Your Email" />
+                <textarea class="main-input" name="message"  id="message" placeholder="Your Message"></textarea>
+                <input type="submit" value="Send Messsage">
+            </form>
+        </div>
+    </div>
+</div>
+<!--End contact -->
+<!--start footer -->
+<div class="footer">
+    <div class="container">
+            <ul class="main-nav">
+              <li><a href="#Home">Home</a></li>
+              <li><a href="#Skills">Skills</a></li>
+              <li><a href="#About">About</a></li>
+              <li><a href="#Project">Project</a></li>
+              <li><a href="#Contact">Contact</a></li>
+              <li><a href="https://github.com/gada-ghaleb">
+              <i class="fab fa-github"></i></a></li>
+            </ul>
+        </div>
+        <p class="copyright">
+            &copy; 2022 Gada Ghaleb &bull; Web Developer-Videomaker-Graphic Design.</p>   
+    </div>
+     
+</div>
+<!--end footer-->
+</body>
+</html>
